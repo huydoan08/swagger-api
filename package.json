@@ -1,12 +1,16 @@
 {
   "name": "project-name",
   "version": "0.0.1",
-  "description": "",
+  "description": "NestJS API with Swagger documentation",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist build",
     "build": "nest build && npm run postbuild",
     "postbuild": "node -e \"const fs = require('fs'); if (fs.existsSync('build')) fs.rmSync('build', {recursive: true}); fs.cpSync('dist', 'build', {recursive: true});\"",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

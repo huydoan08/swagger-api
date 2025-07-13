@@ -1,14 +1,15 @@
 services:
   - type: web
-    name: project-name
+    name: project-name-api
     env: node
-    buildCommand: npm install && npm run build
+    region: oregon
+    plan: free
+    buildCommand: npm ci && npm run build
     startCommand: npm run start:prod
     envVars:
       - key: NODE_VERSION
-        value: 18
-      - key: PORT
-        value: 3000
+        value: 18.19.0
+      - key: NODE_ENV
+        value: production
     healthCheckPath: /
-    regions:
-      - oregon 
+    autoDeploy: true 
