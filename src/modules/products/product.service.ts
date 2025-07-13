@@ -13,6 +13,7 @@ export class ProductService {
         return this.product;
     }
 
+
     createProduct(data: any): Product {
         const newProduct = new Product(data);
         this.product.push(newProduct);
